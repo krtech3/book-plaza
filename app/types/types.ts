@@ -1,7 +1,7 @@
 type BookType = {
   id: string;
   title: string;
-  content: String;
+  content: string;
   price: number;
   thumbnail: {url: string};
   createdAt: string;
