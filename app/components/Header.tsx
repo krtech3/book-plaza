@@ -4,7 +4,6 @@ import Link from "next/link";
 import { nextAuthOptions } from "../lib/next-auth/options";
 import { User } from "../types/types";
 
-
 const Header = async () => {
   const session = await getServerSession(nextAuthOptions);
   const user = session?.user as User;

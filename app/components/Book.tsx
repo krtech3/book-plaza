@@ -15,7 +15,7 @@ type BookProps = {
 const Book = ({ book, isPurchased }: BookProps) => {
   const [showModal, setShowModal] = useState(false);
   const { data: session } = useSession();
-  const user: any = session?.user;
+  const user: any | undefined = session?.user;
   const router = useRouter();
 
   const startCheckout = async () => {

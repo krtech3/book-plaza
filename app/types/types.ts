@@ -4,8 +4,9 @@ type BookType = {
   content: string;
   price: number;
   thumbnail: {url: string};
+  publishedAt: string;
   createdAt: string;
-  updateAt: string;
+  updatedAt: string;
 };
 
 type User = {
@@ -23,4 +24,4 @@ type Purchase = {
   user: User;
 };
 
-export type { BookType, Purchase, User };
+export type { BookType, Purchase };

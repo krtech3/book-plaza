@@ -10,6 +10,7 @@ if (!globalForPrisma.prisma) {
   globalForPrisma.prisma = new PrismaClient();
 }
 
+// eslint-disable-next-line prefer-const
 prisma = globalForPrisma.prisma;
 
 export default prisma;
