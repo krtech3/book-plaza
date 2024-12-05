@@ -5,7 +5,7 @@ export const client = createClient({
   apiKey: process.env.NEXT_PUBLIC_MICROCMS_API_KEY || "",
 });
 
-export default getAllBooks = async () => {
+export const getAllBooks = async () => {
   const allBooks = await client.getList({
     endpoint: "bookplaza",
   });
