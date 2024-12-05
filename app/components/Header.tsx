@@ -6,7 +6,7 @@ import { User } from "../types/types";
 
 const Header = async () => {
   const session = await getServerSession(nextAuthOptions);
-  const user = session?.user as User;
+  const user = session?.user as User | undefined;
 
   return (
     <header className="bg-slate-600 text-gray-100 shadow-lg">

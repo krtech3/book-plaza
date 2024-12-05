@@ -1,5 +1,6 @@
 "use client";
 
+import { User } from "next-auth";
 import { useSession } from "next-auth/react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
@@ -15,7 +16,8 @@ type BookProps = {
 const Book = ({ book, isPurchased }: BookProps) => {
   const [showModal, setShowModal] = useState(false);
   const { data: session } = useSession();
-  const user: any | undefined = session?.user;
+  const user = session?.user as User | undefined;
+
   const router = useRouter();
 
   const startCheckout = async () => {

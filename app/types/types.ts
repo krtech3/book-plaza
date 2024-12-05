@@ -24,4 +24,5 @@ type Purchase = {
   user: User;
 };
 
-export type { BookType, Purchase };
+export type { BookType, Purchase, User };
+

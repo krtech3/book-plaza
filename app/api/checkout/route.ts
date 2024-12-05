@@ -32,7 +32,11 @@ export async function POST(request: Request) {
     });
     return NextResponse.json({ checkout_url: session.url });
   } catch (err: unknown) {
-    console.error("Error creating Stripe session:", err);
-    return NextResponse.json(err.message);
+    if (err instanceof Error) {
+      return NextResponse.json({ message: err.message }, { status: 500 });
+    } else {
+      //console.error("Error creating Stripe session:", err);
+      return NextResponse.json({ error: "An unknown error occurred" }, { status: 500 });
+    }
   }
 }
