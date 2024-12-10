@@ -1,14 +1,14 @@
-import { getServerSession } from "next-auth";
+import { getServerSession, User } from "next-auth";
 import Book from "./components/Book";
 import { getAllBooks } from "./lib/microcms/client";
 import { nextAuthOptions } from "./lib/next-auth/options";
-import { BookType, Purchase, User } from "./types/types";
+import { BookType, Purchase } from "./types/types";
 
 // eslint-disable-next-line @next/next/no-async-client-component
 export default async function Home() {
   const { contents } = await getAllBooks();
   const session = await getServerSession(nextAuthOptions);
-  const user = session?.user as User;
+  const user = session?.user as User | undefined;
 
   let purchaseBookIds: string[] = [];
 

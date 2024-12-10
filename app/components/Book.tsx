@@ -1,11 +1,11 @@
 "use client";
 
-import { User } from "next-auth";
+// import { User } from "next-auth";
 import { useSession } from "next-auth/react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
-import { BookType } from "../types/types";
+import { BookType, User } from "../types/types";
 
 type BookProps = {
   book: BookType;
