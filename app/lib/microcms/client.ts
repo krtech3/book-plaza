@@ -10,7 +10,9 @@ export const getAllBooks = async () => {
   const allBooks = await client.getList<BookType>({
     endpoint: "bookplaza",
     customRequestInit: {
-      cache: "no-cache",
+      next: {
+        revalidate: 3600
+      }
     },
   });
 
