@@ -6,7 +6,7 @@ import { BookType, Purchase } from "./types/types";
 
 // eslint-disable-next-line @next/next/no-async-client-component
 export default async function Home() {
-  const { contents } = await getAllBooks();
+  const { contents } = await getAllBooks(); //ISR
   const session = await getServerSession(nextAuthOptions);
   const user = session?.user as User | undefined;
 
@@ -37,6 +37,7 @@ export default async function Home() {
             key={book.id}
             book={book}
             isPurchased={purchaseBookIds.includes(book.id)}
+            user={user}
           />
         ))}
       </main>
