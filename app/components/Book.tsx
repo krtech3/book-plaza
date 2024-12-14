@@ -9,7 +9,7 @@ import { BookType, User } from "../types/types";
 type BookProps = {
   book: BookType;
   isPurchased: boolean;
-  user: User;
+  user: User | undefined;
 };
 
 // eslint-disable-next-line react/display-name
