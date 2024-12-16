@@ -5,8 +5,13 @@ import { nextAuthOptions } from "../lib/next-auth/options";
 import { User } from "../types/types";
 
 const Header = async () => {
-  const session = await getServerSession(nextAuthOptions);
-  const user = session?.user as User | undefined;
+  let user: User | undefined;
+  try {
+    const session = await getServerSession(nextAuthOptions);
+    user = session?.user as User | undefined;
+  } catch (error) {
+    console.error("Failed to get session:", error);
+  }
 
   return (
     <header className="bg-slate-600 text-gray-100 shadow-lg">
